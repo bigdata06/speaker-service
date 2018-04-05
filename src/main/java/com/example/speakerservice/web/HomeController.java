@@ -23,7 +23,7 @@ public class HomeController {
 	// Don't do this at home
 	private void simulateSlowService() {
 		try {
-			Thread.sleep(this.properties.getDelay());
+			Thread.sleep(this.properties.getDelay().toMillis());
 		} catch (InterruptedException e) {
 			throw new IllegalStateException(e);
 		}

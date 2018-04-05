@@ -1,5 +1,7 @@
 package com.example.speakerservice;
 
+import java.time.Duration;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -13,9 +15,9 @@ public class HelloProperties {
 	private String target = "World";
 
 	/**
-	 * Delay in milliseconds after which the welcome message is made available.
+	 * Delay after which the welcome message is made available.
 	 */
-	private long delay = 3000;
+	private Duration delay = Duration.ofSeconds(3);
 
 	public String getTarget() {
 		return this.target;
@@ -25,11 +27,11 @@ public class HelloProperties {
 		this.target = target;
 	}
 
-	public long getDelay() {
+	public Duration getDelay() {
 		return this.delay;
 	}
 
-	public void setDelay(long delay) {
+	public void setDelay(Duration delay) {
 		this.delay = delay;
 	}
 
