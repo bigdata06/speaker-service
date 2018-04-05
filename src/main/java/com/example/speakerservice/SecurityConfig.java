@@ -22,7 +22,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.requestMatchers(EndpointRequest.to("info", "health")).permitAll()
+				.requestMatchers(EndpointRequest.to("info", "health", "prometheus")).permitAll()
 				.requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("HERO")
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 				.antMatchers("/**").authenticated()
